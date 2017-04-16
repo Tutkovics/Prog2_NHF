@@ -1,0 +1,3 @@
+/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/cmake-build-debug/CMakeFiles/edit_cache.dir
+/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/cmake-build-debug/CMakeFiles/Code.dir

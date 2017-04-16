@@ -1,0 +1,1 @@
+/usr/bin/c++   -g   CMakeFiles/Code.dir/main.cpp.o CMakeFiles/Code.dir/Movie.cpp.o CMakeFiles/Code.dir/Documentary.cpp.o CMakeFiles/Code.dir/Family.cpp.o CMakeFiles/Code.dir/Container.cpp.o  -o Code 
