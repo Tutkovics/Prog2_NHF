@@ -41,6 +41,7 @@ public:
     void setType( movieType ty ){ type = ty; }
 
     virtual void printDatas();
+    static void sep();
 
     ~Movie(){}
 

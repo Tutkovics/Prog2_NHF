@@ -17,6 +17,7 @@ CMakeFiles/Code.dir/Movie.cpp.o: ../Movie.cpp
 CMakeFiles/Code.dir/Movie.cpp.o: ../Movie.h
 
 CMakeFiles/Code.dir/main.cpp.o: ../Documentary.h
+CMakeFiles/Code.dir/main.cpp.o: ../Family.h
 CMakeFiles/Code.dir/main.cpp.o: ../Movie.h
 CMakeFiles/Code.dir/main.cpp.o: ../main.cpp
 

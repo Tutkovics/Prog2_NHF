@@ -7,4 +7,9 @@ void Movie::printDatas() {
     std::cout << "Rendező: " << director << std::endl;
     std::cout << "Lejátszási idő: " << playingTime << std::endl;
     std::cout << "Értékelés: " << rating << std::endl;
+
+}
+
+void Movie::sep() {
+    std::cout << "\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - \n" << std::endl;
 }
