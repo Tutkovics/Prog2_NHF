@@ -9,7 +9,7 @@ int main() {
     Family csalad("Másik család","Fasz Tudja",120,2015,4.1, family, 15);
     Movie altalanos("Hullám","Stephen Hawking",120,1997,5.1, def);
 
-    //print datas
+    //print data
     doc.printDatas();
     Movie::sep();
     csalad.printDatas();
