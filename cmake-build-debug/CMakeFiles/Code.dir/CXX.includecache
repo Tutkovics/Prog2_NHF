@@ -6,31 +6,53 @@
 
 #IncludeRegexTransform: 
 
-/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Movie.cpp
+/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Container.cpp
+Container.h
+/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Container.h
 
+/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Container.h
+Movie.h
 /media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Movie.h
-iostream
--
-string
--
 
-/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/cmake-build-debug/Documentary.cpp
+/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Documentary.cpp
 Documentary.h
-/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/cmake-build-debug/Documentary.h
+/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Documentary.h
 
-/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/cmake-build-debug/Documentary.h
+/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Documentary.h
 iostream
 -
 string
 -
-../Movie.h
+Movie.h
 /media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Movie.h
+
+/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Family.cpp
+Family.h
+/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Family.h
+
+/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Family.h
+iostream
+-
+string
+-
+Movie.h
+/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Movie.h
+
+/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Movie.cpp
+Movie.h
+/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Movie.h
+
+/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Movie.h
+iostream
+-
+string
+-
 
 /media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/main.cpp
 iostream
 -
 Movie.h
 /media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Movie.h
-cmake-build-debug/Documentary.h
-/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/cmake-build-debug/Documentary.h
+Documentary.h
+/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Documentary.h
 

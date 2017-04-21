@@ -18,6 +18,9 @@ public:
     //set-, get functions
     string getDescription(){ return description; }
     void setDescription( string des ){ description = des; }
+
+    void printDatas();
+
 };
 
 

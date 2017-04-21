@@ -40,6 +40,8 @@ public:
     void setDirector( string d ){ director = d; }
     void setType( movieType ty ){ type = ty; }
 
+    virtual void printDatas();
+
     ~Movie(){}
 
 };

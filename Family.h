@@ -18,6 +18,8 @@ public:
     //set-, get functions
     int getAgeLimit(){ return ageLimit; }
     void setAgeLimit( int a ){ ageLimit = a; }
+
+    void printDatas();
 };
 
 
