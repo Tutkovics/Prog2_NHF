@@ -6,17 +6,27 @@
 
 int main() {
     // test cases
+
+    Container con;
+    con.loadToMemory();
+    con.printAll();
+
+    /* Container test
     Container con;
     con.push_back( new Movie("Hullám","Stephen Hawking",120,1997,5.1, def));
     con.push_back( new Family("Másik család","Fasz Tudja",120,2015,4.1, family, 15));
     con.push_back( new Documentary("Dokumentumfilm","Hawking",120,1999,9.1, documentary, "Nagyon jó kis dokumnetum film"));
-    con.printAll();
-    /*Documentary doc("Dokumentumfilm","Hawking",120,1999,9.1, documentary, "Nagyon jó kis dokumnetum film");
+    con.push_back( Container::getNewMovie() ); // get new movie from user
+    con.printAll();*/
+
+    /* Movie objects test
+    Documentary doc("Dokumentumfilm","Hawking",120,1999,9.1, documentary, "Nagyon jó kis dokumnetum film");
     Family csalad("Másik család","Fasz Tudja",120,2015,4.1, family, 15);
     Movie altalanos("Hullám","Stephen Hawking",120,1997,5.1, def);*/
 
-    //print data
-    /*doc.printDatas();
+
+    /* Data print test
+    doc.printDatas();
     Movie::sep();
     csalad.printDatas();
     Movie::sep();

@@ -12,8 +12,8 @@ class Documentary : public Movie{
 
 public:
     //constructor
-    Documentary(string t = "No title", string d = "Anonymous", int p = 0, int re = 0, double ra = 0.0, movieType ty = def, string des = ""):
-            Movie(t, d, p, re, ra, ty), description(des){}
+    Documentary(string t = "No title", string d = "Anonymous", int p = 0, int re = 0, double ra = 0.0, movieType ty = def, int id = 0, string des = ""):
+            Movie(t, d, p, re, ra, ty, id), description(des){}
 
     //set-, get functions
     string getDescription(){ return description; }

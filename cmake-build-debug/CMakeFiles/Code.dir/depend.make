@@ -3,6 +3,8 @@
 
 CMakeFiles/Code.dir/Container.cpp.o: ../Container.cpp
 CMakeFiles/Code.dir/Container.cpp.o: ../Container.h
+CMakeFiles/Code.dir/Container.cpp.o: ../Documentary.h
+CMakeFiles/Code.dir/Container.cpp.o: ../Family.h
 CMakeFiles/Code.dir/Container.cpp.o: ../Movie.h
 
 CMakeFiles/Code.dir/Documentary.cpp.o: ../Documentary.cpp
@@ -16,6 +18,7 @@ CMakeFiles/Code.dir/Family.cpp.o: ../Movie.h
 CMakeFiles/Code.dir/Movie.cpp.o: ../Movie.cpp
 CMakeFiles/Code.dir/Movie.cpp.o: ../Movie.h
 
+CMakeFiles/Code.dir/main.cpp.o: ../Container.h
 CMakeFiles/Code.dir/main.cpp.o: ../Documentary.h
 CMakeFiles/Code.dir/main.cpp.o: ../Family.h
 CMakeFiles/Code.dir/main.cpp.o: ../Movie.h

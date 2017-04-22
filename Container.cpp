@@ -1,14 +1,18 @@
 #include "Container.h"
 #include "Family.h"
 #include "Documentary.h"
+#include <iostream>
+#include <fstream>
 
-void Container::getNewMovie() {
+
+Movie* Container::getNewMovie() {
     // declare required variables
     std::string newTitle, newDirector;
     int newRelease, newPlayingTime;
     char a; // help with movieType switch
     double newRating;
     movieType newType;
+    Movie* pMovie;
 
     // get variables
     // need exception handling --> now break the function if you give wrong format
@@ -42,29 +46,28 @@ void Container::getNewMovie() {
         int newAgeLimit;
         std::cout << "Korhatár: ";
         std::cin >> newAgeLimit;
-        Family csaladi(newTitle, newDirector, newPlayingTime, newRelease, newRating, newType, newAgeLimit);
-        csaladi.printDatas();
+        pMovie = new Family(newTitle, newDirector, newPlayingTime, newRelease, newRating, newType, 0,newAgeLimit);
     } else if( a == '3') { // if DOCUMENTARY movie
         newType = documentary;
         std::string newDescription;
         std::cin.ignore(1,'\n'); // ignore endline character
         std::cout << "Leírás: ";
         getline(std::cin, newDescription);
-        Documentary doc(newTitle, newDirector, newPlayingTime, newRelease, newRating, newType, newDescription);
-        doc.printDatas();
+        pMovie = new Documentary(newTitle, newDirector, newPlayingTime, newRelease, newRating, newType, 0,newDescription);
     } else { // in other cases
         newType = def;
-        Movie bekert(newTitle, newDirector, newPlayingTime, newRelease, newRating, newType);
-        bekert.printDatas();
+        pMovie = new Movie(newTitle, newDirector, newPlayingTime, newRelease, newRating, newType);
     }
 
     Movie::sep();
+
+    return  pMovie;
 }
 
 void Container::push_back(Movie * moviePointer) {
     // it could be better if wouldn't resize after every new element
-    if( pcs == 0){// this is the firs pointer
-        array = moviePointer;
+    /*if( pcs == 0){// this is the firs pointer
+        array[0] = moviePointer;
         pcs++;
     } else { // was not empty
         pcs++;
@@ -75,12 +78,80 @@ void Container::push_back(Movie * moviePointer) {
         }
         newArray[pcs] = *moviePointer;
         delete [] array;
-        array = newArray;
-    }
+        *array = newArray;
+    }*/
+    array[pcs] = moviePointer;
+    pcs++;
 }
 
 void Container::printAll() {
     for (int i = 0; i < pcs; ++i) {
         array[i]->printDatas();
+        Movie::sep();
+    }
+}
+
+void Container::loadToMemory() {
+    std::fstream dataFile;
+    dataFile.open ("data.txt");
+    if( !dataFile.is_open() ){ // unsuccessful file opening
+        // exception handling
+        std::cerr << "SIKERTELEN FÁJLNYITÁS! (data.txt)" << std::endl;
+
+    } else { // successfully opened
+        std::string line;
+        while ( dataFile.good() ) {
+            //read line by line
+            getline (dataFile, line);
+
+            std::string delimiter = ";";
+
+            size_t pos = 0;
+            std::string token;
+
+            movieType ty = def;
+            int i = 0, re, playing, id;
+            double ra;
+            std::string tit, dir;
+
+            while ((pos = line.find(delimiter)) != std::string::npos) {
+                token = line.substr(0, pos);
+                //std::cout << token << std::endl;
+                if( i == 0 ){ //id
+                    id = std::stoi(token);
+                } else if( i == 1 ){ //movieType
+                    int k = std::stoi(token);
+                    if( k == 2 ) ty = family;
+                    else if ( k == 3) ty = documentary;
+                } else if( i == 2 ){ //title
+                    tit = token;
+                } else if( i == 3 ){ //director
+                    dir = token;
+                } else if( i == 4 ){ //release
+                    re = std::stoi(token);
+                } else if( i == 5 ){ //playingTime
+                    playing = std::stoi(token);
+                } else if( i == 6 ){ //rating
+                    ra = std::stod(token);
+                } else {
+                    std::cerr << "VALAMI NEM STIMMEL A SOR BEOLVASÁSÁNÁL" << std::endl;
+                }
+                line.erase(0, pos + delimiter.length());
+                i++;
+            }
+            // line still cuold contain description or ageLimit
+            if( ty == family ){
+                int ageLim = std::stoi(line);
+                this->push_back( new Family(tit, dir, playing, re, ra, ty, id, ageLim) );
+            } else if( ty == documentary ){
+                std::string des = line;
+                this->push_back( new Documentary(tit, dir, playing, re, ra, ty, id, des) );
+            } else{ //general movie
+                this->push_back( new Movie(tit, dir, playing, re, ra, ty, id) );
+            }
+
+
+        }
+        dataFile.close();
     }
 }

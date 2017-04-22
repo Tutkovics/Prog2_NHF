@@ -4,22 +4,23 @@
 #include "Movie.h"
 
 class Container {
-    Movie* array;
-    int pcs;
+    Movie* array[100];
+    int pcs = 0;
 
 public:
     // constructor
-    Container(Movie* first = NULL, int pcs = 0): array(first), pcs(pcs){}
+    Container(){}
+    //Container(Movie* first = NULL, int pcs = 0): array(first), pcs(pcs){}
 
     int getPcs(){ return pcs; }
     void setPcs( int newPcs ){ pcs = newPcs; }
-    void setFirst( Movie* newFirst ){ array = newFirst; }
-    Movie* getFirst(){ return array; }
+    void setFirst( Movie* newFirst ){ *array = newFirst; }
+    Movie* getFirst(){ return array[0]; }
 
 
     //important functions
     void loadToMemory();
-    static void getNewMovie();
+    static Movie* getNewMovie();
     void push_back(Movie*);
     void deleteMovie();
     void editMovie();

@@ -11,18 +11,19 @@ enum movieType { def, family, documentary };
 class Movie {
 
     // private data
+    int id;
     string title;
+    string director;
     int release;
     int playingTime;
     double rating;
-    string director;
     movieType type;
 
 public:
 
     //constructor
-    Movie(string t = "No title", string d = "Anonymous", int p = 0, int re = 0, double ra = 0.0, movieType ty = def):
-            title(t), release(re), playingTime(p), rating(ra), director(d), type(ty) {}
+    Movie( string t = "No title", string d = "Anonymous", int p = 0, int re = 0, double ra = 0.0, movieType ty = def, int id = 0):
+            title(t), release(re), playingTime(p), rating(ra), director(d), type(ty), id(id) {}
 
     //get functions
     string getTitle(){ return title; }
@@ -44,6 +45,7 @@ public:
     static void sep();
 
     ~Movie(){}
+
 
 };
 

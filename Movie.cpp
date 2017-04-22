@@ -2,6 +2,7 @@
 
 
 void Movie::printDatas() {
+    std::cout << "ID: " << id << std::endl;
     std::cout << "Cím: " << title << std::endl;
     std::cout << "Megjelenés éve: " << release << std::endl;
     std::cout << "Rendező: " << director << std::endl;
@@ -13,3 +14,5 @@ void Movie::printDatas() {
 void Movie::sep() {
     std::cout << "\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - \n" << std::endl;
 }
+
+

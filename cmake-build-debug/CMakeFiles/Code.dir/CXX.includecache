@@ -9,6 +9,14 @@
 /media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Container.cpp
 Container.h
 /media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Container.h
+Family.h
+/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Family.h
+Documentary.h
+/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Documentary.h
+iostream
+-
+fstream
+-
 
 /media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Container.h
 Movie.h
@@ -57,4 +65,6 @@ Documentary.h
 /media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Documentary.h
 Family.h
 /media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Family.h
+Container.h
+/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Container.h
 
