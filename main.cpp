@@ -16,7 +16,7 @@ int main() {
 
     // test cases
 
-    /*// General Movie class
+    /* // General Movie class
     // ID not set
     Movie p =  Movie("Hullám","Stephen Hawking",120,1997,5.1, def);
     if( p.getTitle() == "Hullám")

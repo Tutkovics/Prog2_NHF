@@ -6,18 +6,19 @@
 
 using std::string;
 
-enum movieType { def, family, documentary };
+enum movieType { def = 1, family = 2, documentary = 3 };
 
 class Movie {
 
     // private data
-    int id;
+
     string title;
-    string director;
     int release;
     int playingTime;
     double rating;
+    string director;
     movieType type;
+    int id;
 
 public:
 
@@ -49,7 +50,7 @@ public:
     virtual void printToFile( std::fstream& os );
     static void sep();
 
-    ~Movie(){}
+    virtual ~Movie(){}
 
 
 };

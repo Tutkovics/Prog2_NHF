@@ -4,11 +4,16 @@
 #include <iostream>
 #include <fstream>
 
+int Container::aktId = 0;
 
 Movie* Container::getNewMovie() {
     // declare required variables
     std::string newTitle, newDirector;
     int newRelease, newPlayingTime;
+
+    Container::aktId++;
+    int id = Container::aktId;
+
     char a; // help with movieType switch
     double newRating;
     movieType newType;
@@ -16,26 +21,27 @@ Movie* Container::getNewMovie() {
 
     // get variables
     // need exception handling --> now break the function if you give wrong format
-    std::cout << "ÚJ FILM" << std::endl;
+    std::cin.ignore(1,'\n');
+    std::cout << "UJ FILM" << std::endl;
 
-    std::cout << "Cím: ";
+    std::cout << "Cim: ";
     getline( std::cin, newTitle);
 
-    std::cout << "Rendező: ";
+    std::cout << "Rendezo: ";
     getline( std::cin, newDirector);
 
-    std::cout << "Megjelenés éve: ";
+    std::cout << "Megjelenes eve: ";
     std::cin >> newRelease;
 
-    std::cout << "Lejátszási idő (perc): ";
+    std::cout << "Lejatszasi ido (perc): ";
     std::cin >> newPlayingTime;
 
-    std::cout << "Értékelés: ";
+    std::cout << "Ertekeles: ";
     std::cin >> newRating;
 
-    std::cout << "Típus: \n"
-            << "\t1 - Általános\n"
-            << "\t2 - Családi\n"
+    std::cout << "Tipus: \n"
+            << "\t1 - Altalanos\n"
+            << "\t2 - Csaladi\n"
             << "\t3 - Dokumentum\n";
     std::cin >> a;
 
@@ -44,19 +50,19 @@ Movie* Container::getNewMovie() {
     if( a == '2') { // if FAMILY movie
         newType = family;
         int newAgeLimit;
-        std::cout << "Korhatár: ";
+        std::cout << "Korhatar: ";
         std::cin >> newAgeLimit;
-        pMovie = new Family(newTitle, newDirector, newPlayingTime, newRelease, newRating, newType, 0,newAgeLimit);
+        pMovie = new Family(newTitle, newDirector, newPlayingTime, newRelease, newRating, newType, id,newAgeLimit);
     } else if( a == '3') { // if DOCUMENTARY movie
         newType = documentary;
         std::string newDescription;
-        std::cin.ignore(1,'\n'); // ignore endline character
-        std::cout << "Leírás: ";
+        std::cin.ignore(2,'\n'); // ignore endline character
+        std::cout << "Leiras: ";
         getline(std::cin, newDescription);
-        pMovie = new Documentary(newTitle, newDirector, newPlayingTime, newRelease, newRating, newType, 0,newDescription);
+        pMovie = new Documentary(newTitle, newDirector, newPlayingTime, newRelease, newRating, newType, id,newDescription);
     } else { // in other cases
         newType = def;
-        pMovie = new Movie(newTitle, newDirector, newPlayingTime, newRelease, newRating, newType);
+        pMovie = new Movie(newTitle, newDirector, newPlayingTime, newRelease, newRating, newType, id);
     }
 
     Movie::sep();
@@ -82,10 +88,14 @@ void Container::push_back(Movie * moviePointer) {
     }*/
     array[pcs] = moviePointer;
     pcs++;
-
 }
 
 void Container::printAll() {
+    if( pcs == 0){
+        std::cout << "Nincs megjelenitendo adat" << std::endl;
+        return;
+    }
+
     for (int i = 0; i < pcs; ++i) {
         array[i]->printDatas();
         Movie::sep();
@@ -153,6 +163,7 @@ void Container::loadToMemory() {
                 } else if (ty == def) { //general movie
                     this->push_back(new Movie(tit, dir, playing, re, ra, ty, id));
                 }
+                Container::aktId = id;
             }
         }
 
@@ -259,5 +270,29 @@ void Container::editMovie(int id) {
             }
         }
         dataFile.close();
+    }
+}
+
+void Container::clean() {
+    // delete all pointer from Movie array -> reload datas from file
+    for(int i = 0; i < pcs; i++){
+        delete array[i];
+    }
+    pcs = 0;
+}
+
+void Container::addToFile() {
+    // append the last movie* to data.txt
+    std::fstream dataFile;
+    dataFile.open ("data.txt", std::ofstream::app);
+    if( !dataFile.is_open() ){ // unsuccessful file opening
+        // exception handling
+        std::cerr << "SIKERTELEN FÁJLNYITÁS ÉS MENTÉS! (addToFile)" << std::endl;
+    } else {
+        dataFile << '\n';
+        array[ pcs-1 ]->printToFile( dataFile );
+        dataFile.close();
+        this->clean();
+        this->loadToMemory();
     }
 }

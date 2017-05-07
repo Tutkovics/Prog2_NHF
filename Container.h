@@ -6,10 +6,13 @@
 class Container {
     Movie* array[100];
     int pcs = 0;
+    static int aktId;
+
 
 public:
     // constructor
     Container(){}
+
     //Container(Movie* first = NULL, int pcs = 0): array(first), pcs(pcs){}
 
     int getPcs(){ return pcs; }
@@ -25,6 +28,8 @@ public:
     void deleteMovie(int id);
     void editMovie(int id);
     void search();
+    void clean();
+    void addToFile();
 
     void printAll();
 
