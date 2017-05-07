@@ -17,7 +17,6 @@ int Menu::menuDisplay() {
 
 void Menu::menuShow( Container& con) {
     while( true ) {
-        //std::cin.ignore(1,'\n');
         int c = Menu::menuDisplay();
         int id = 0;
 
@@ -26,7 +25,7 @@ void Menu::menuShow( Container& con) {
                 con.printAll();
                 break;
             case 2:
-                std::cout << "Not now" << std::endl;
+                con.search();
                 break;
             case 3:
                 std::cout << "Szerkesztendo film ID-ja: " << std::endl;
@@ -47,9 +46,10 @@ void Menu::menuShow( Container& con) {
                 con.loadToMemory();
                 break;
             case 6:
+                con.clean();
                 exit(0);
             default:
-                std::cout << "Hibas input" << std::endl;
+                throw "Hibas user input";
         }
     }
 }

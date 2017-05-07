@@ -30,7 +30,6 @@ public:
     void search();
     void clean();
     void addToFile();
-
     void printAll();
 
 };

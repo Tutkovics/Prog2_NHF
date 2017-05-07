@@ -35,9 +35,6 @@ public:
     movieType getType(){ return type; }
     int getId() { return id;}
 
-    /*virtual int getAgeLimit();
-    virtual std::string getDescription();*/
-
     //set functions
     void setTitle( string t ){ title = t; }
     void setRelease( int re ){ release = re; }
@@ -51,9 +48,6 @@ public:
     static void sep();
 
     virtual ~Movie(){}
-
-
 };
-
 
 #endif //CODE_MOVIE_H

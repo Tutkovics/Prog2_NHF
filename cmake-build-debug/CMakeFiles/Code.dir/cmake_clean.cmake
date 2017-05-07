@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Code.dir/main.cpp.o"
   "CMakeFiles/Code.dir/Movie.cpp.o"
   "CMakeFiles/Code.dir/Documentary.cpp.o"
+  "CMakeFiles/Code.dir/Memtrace.cpp.o"
   "CMakeFiles/Code.dir/Family.cpp.o"
   "CMakeFiles/Code.dir/Container.cpp.o"
   "CMakeFiles/Code.dir/Menu.cpp.o"

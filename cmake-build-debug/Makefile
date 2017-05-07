@@ -204,6 +204,33 @@ Family.cpp.s:
 	$(MAKE) -f CMakeFiles/Code.dir/build.make CMakeFiles/Code.dir/Family.cpp.s
 .PHONY : Family.cpp.s
 
+Memtrace.o: Memtrace.cpp.o
+
+.PHONY : Memtrace.o
+
+# target to build an object file
+Memtrace.cpp.o:
+	$(MAKE) -f CMakeFiles/Code.dir/build.make CMakeFiles/Code.dir/Memtrace.cpp.o
+.PHONY : Memtrace.cpp.o
+
+Memtrace.i: Memtrace.cpp.i
+
+.PHONY : Memtrace.i
+
+# target to preprocess a source file
+Memtrace.cpp.i:
+	$(MAKE) -f CMakeFiles/Code.dir/build.make CMakeFiles/Code.dir/Memtrace.cpp.i
+.PHONY : Memtrace.cpp.i
+
+Memtrace.s: Memtrace.cpp.s
+
+.PHONY : Memtrace.s
+
+# target to generate assembly for a file
+Memtrace.cpp.s:
+	$(MAKE) -f CMakeFiles/Code.dir/build.make CMakeFiles/Code.dir/Memtrace.cpp.s
+.PHONY : Memtrace.cpp.s
+
 Menu.o: Menu.cpp.o
 
 .PHONY : Menu.o
@@ -303,6 +330,9 @@ help:
 	@echo "... Family.o"
 	@echo "... Family.i"
 	@echo "... Family.s"
+	@echo "... Memtrace.o"
+	@echo "... Memtrace.i"
+	@echo "... Memtrace.s"
 	@echo "... Menu.o"
 	@echo "... Menu.i"
 	@echo "... Menu.s"

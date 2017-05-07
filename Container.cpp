@@ -1,8 +1,6 @@
 #include "Container.h"
 #include "Family.h"
 #include "Documentary.h"
-#include <iostream>
-#include <fstream>
 
 int Container::aktId = 0;
 
@@ -52,10 +50,12 @@ Movie* Container::getNewMovie() {
         int newAgeLimit;
         std::cout << "Korhatar: ";
         std::cin >> newAgeLimit;
+
         pMovie = new Family(newTitle, newDirector, newPlayingTime, newRelease, newRating, newType, id,newAgeLimit);
     } else if( a == '3') { // if DOCUMENTARY movie
         newType = documentary;
         std::string newDescription;
+
         std::cin.ignore(2,'\n'); // ignore endline character
         std::cout << "Leiras: ";
         getline(std::cin, newDescription);
@@ -107,7 +107,7 @@ void Container::loadToMemory() {
     dataFile.open ("data.txt");
     if( !dataFile.is_open() ){ // unsuccessful file opening
         // exception handling
-        std::cerr << "SIKERTELEN FÁJLNYITÁS! (loadToMemory)" << std::endl;
+        throw "SIKERTELEN FÁJLNYITÁS! (loadToMemory)" ;
 
     } else { // successfully opened
         std::string line;
@@ -146,7 +146,7 @@ void Container::loadToMemory() {
                 } else if( i == 6 ){ //rating
                     ra = std::stod(token);
                 } else {
-                    std::cerr << "VALAMI NEM STIMMEL A SOR BEOLVASÁSÁNÁL" << std::endl;
+                    throw "VALAMI NEM STIMMEL A SOR BEOLVASÁSÁNÁL";
                 }
                 line.erase(0, pos + delimiter.length());
                 i++;
@@ -173,15 +173,18 @@ void Container::loadToMemory() {
 
 void Container::deleteMovie(int id) {
     std::fstream dataFile;
+
     dataFile.open ("data.txt", std::ofstream::out | std::ofstream::trunc);
+
     if( !dataFile.is_open() ){ // unsuccessful file opening
         // exception handling
-        std::cerr << "SIKERTELEN FÁJLNYITÁS! (deleteMovie)" << std::endl;
+        throw "SIKERTELEN FÁJLNYITÁS! (deleteMovie)";
 
     } else {
         for (int i = 0; i < pcs; i++) {
             if (array[i]->getId() == id) {
                 // deleted movie
+                std::cout << "Sikeres torles" << std::endl;
             } else {
                 if( i != 0) {
                     dataFile << '\n';
@@ -191,7 +194,6 @@ void Container::deleteMovie(int id) {
                 }
             }
         }
-
         dataFile.close();
 
     }
@@ -202,18 +204,18 @@ void Container::editMovie(int id) {
     dataFile.open ("data.txt", std::ofstream::out | std::ofstream::trunc);
     if( !dataFile.is_open() ){ // unsuccessful file opening
         // exception handling
-        std::cerr << "SIKERTELEN FÁJLNYITÁS! (editeMovie)" << std::endl;
+        throw "SIKERTELEN FÁJLNYITÁS! (editeMovie)";
 
     } else {
         for (int i = 0; i < pcs; i++) {
             if (array[i]->getId() == id) {
                 std::cout << "Melyik argumentumot akarod megvaltoztatni?" << std::endl;
                 int choice;
-                std::cout << "1 - Cim" << std::endl;
-                std::cout << "2 - Rendezo" << std::endl;
-                std::cout << "3 - Megjelenes" << std::endl;
-                std::cout << "4 - Ertekeles" << std::endl;
-                std::cout << "5 - Lejatszas ideje" << std::endl;
+                std::cout << "\t1 - Cim" << std::endl;
+                std::cout << "\t2 - Rendezo" << std::endl;
+                std::cout << "\t3 - Megjelenes" << std::endl;
+                std::cout << "\t4 - Ertekeles" << std::endl;
+                std::cout << "\t5 - Lejatszas ideje" << std::endl;
                 std::cin >> choice;
                 std::cin.ignore(3,'\n');
                 std::string line;
@@ -287,12 +289,106 @@ void Container::addToFile() {
     dataFile.open ("data.txt", std::ofstream::app);
     if( !dataFile.is_open() ){ // unsuccessful file opening
         // exception handling
-        std::cerr << "SIKERTELEN FÁJLNYITÁS ÉS MENTÉS! (addToFile)" << std::endl;
+        throw "SIKERTELEN FÁJLNYITÁS ÉS MENTÉS! (addToFile)";
     } else {
         dataFile << '\n';
         array[ pcs-1 ]->printToFile( dataFile );
+
         dataFile.close();
         this->clean();
         this->loadToMemory();
+    }
+}
+
+void Container::search() {
+    int choice;
+    std::string str;
+    int in;
+    double ra;
+
+    std::cout << "Melyik atributumra szeretnél keresni?" << std::endl;
+    std::cout << "\t1 - Cim" << std::endl;
+    std::cout << "\t2 - Rendezo" << std::endl;
+    std::cout << "\t3 - Megjelenes" << std::endl;
+    std::cout << "\t4 - Ertekeles" << std::endl;
+    std::cout << "\t5 - Lejatszas ideje" << std::endl;
+    std::cout << "\t6 - Kategoria" << std::endl;
+    std::cin >> choice;
+    std::cin.ignore(3,'\n');
+
+    switch ( choice ){
+        case 1:
+            std::cout << "Cim: " << std::endl;
+            std::cin >> str;
+            break;
+        case 2:
+            std::cout << "Rendezo: " << std::endl;
+            std::cin >> str;
+            break;
+        case 3:
+            std::cout << "Megjelenes: " << std::endl;
+            std::cin >> in;
+            break;
+        case 4:
+            std::cout << "Ertekeles: " << std::endl;
+            std::cin >> ra;
+            break;
+        case 5:
+            std::cout << "Lejatszasi ideje: " << std::endl;
+            std::cin >> in;
+            break;
+        case 6:
+            std::cout << "Tipus" << std::endl;
+            std::cout << "\t1-Altalanos film" << std::endl;
+            std::cout << "\t2-Csaladi film" << std::endl;
+            std::cout << "\t3-Dokumentum film" << std::endl;
+            std::cin >> in;
+            break;
+        default:
+            throw "Hibas user input";
+            break;
+    }
+
+    for( int i = 0; i < pcs; i++){
+        switch ( choice ){
+            case 1:
+                if (array[i]->getTitle().find(str) != std::string::npos) {
+                    array[i]->printDatas();
+                    array[i]->sep();
+                }
+                break;
+            case 2:
+                if (array[i]->getDirector().find(str) != std::string::npos) {
+                    array[i]->printDatas();
+                    array[i]->sep();
+                }
+                break;
+            case 3:
+                if (array[i]->getRelease() == in) {
+                    array[i]->printDatas();
+                    array[i]->sep();
+                }
+                break;
+            case 4:
+                if (array[i]->getRating() == ra) {
+                    array[i]->printDatas();
+                    array[i]->sep();
+                }
+                break;
+            case 5:
+                if (array[i]->getPlayingTime() == in) {
+                    array[i]->printDatas();
+                    array[i]->sep();
+                }
+                break;
+            case 6:
+                if (array[i]->getType() == in) {
+                    array[i]->printDatas();
+                    array[i]->sep();
+                }
+                break;
+            default:
+                break;
+        }
     }
 }

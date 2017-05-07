@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Container.cpp" "/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/cmake-build-debug/CMakeFiles/Code.dir/Container.cpp.o"
   "/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Documentary.cpp" "/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/cmake-build-debug/CMakeFiles/Code.dir/Documentary.cpp.o"
   "/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Family.cpp" "/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/cmake-build-debug/CMakeFiles/Code.dir/Family.cpp.o"
+  "/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Memtrace.cpp" "/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/cmake-build-debug/CMakeFiles/Code.dir/Memtrace.cpp.o"
   "/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Menu.cpp" "/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/cmake-build-debug/CMakeFiles/Code.dir/Menu.cpp.o"
   "/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Movie.cpp" "/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/cmake-build-debug/CMakeFiles/Code.dir/Movie.cpp.o"
   "/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/main.cpp" "/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/cmake-build-debug/CMakeFiles/Code.dir/main.cpp.o"

@@ -15,6 +15,8 @@ CMakeFiles/Code.dir/Family.cpp.o: ../Family.cpp
 CMakeFiles/Code.dir/Family.cpp.o: ../Family.h
 CMakeFiles/Code.dir/Family.cpp.o: ../Movie.h
 
+CMakeFiles/Code.dir/Memtrace.cpp.o: ../Memtrace.cpp
+
 CMakeFiles/Code.dir/Menu.cpp.o: ../Container.h
 CMakeFiles/Code.dir/Menu.cpp.o: ../Menu.cpp
 CMakeFiles/Code.dir/Menu.cpp.o: ../Menu.h
@@ -25,7 +27,7 @@ CMakeFiles/Code.dir/Movie.cpp.o: ../Movie.h
 
 CMakeFiles/Code.dir/main.cpp.o: ../Container.h
 CMakeFiles/Code.dir/main.cpp.o: ../Documentary.h
-CMakeFiles/Code.dir/main.cpp.o: ../Family.h
+CMakeFiles/Code.dir/main.cpp.o: ../Memtrace.h
 CMakeFiles/Code.dir/main.cpp.o: ../Menu.h
 CMakeFiles/Code.dir/main.cpp.o: ../Movie.h
 CMakeFiles/Code.dir/main.cpp.o: ../main.cpp

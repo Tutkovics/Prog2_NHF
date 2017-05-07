@@ -129,9 +129,33 @@ CMakeFiles/Code.dir/Documentary.cpp.o.provides: CMakeFiles/Code.dir/Documentary.
 CMakeFiles/Code.dir/Documentary.cpp.o.provides.build: CMakeFiles/Code.dir/Documentary.cpp.o
 
 
+CMakeFiles/Code.dir/Memtrace.cpp.o: CMakeFiles/Code.dir/flags.make
+CMakeFiles/Code.dir/Memtrace.cpp.o: ../Memtrace.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Code.dir/Memtrace.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Code.dir/Memtrace.cpp.o -c "/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Memtrace.cpp"
+
+CMakeFiles/Code.dir/Memtrace.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Code.dir/Memtrace.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Memtrace.cpp" > CMakeFiles/Code.dir/Memtrace.cpp.i
+
+CMakeFiles/Code.dir/Memtrace.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Code.dir/Memtrace.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Memtrace.cpp" -o CMakeFiles/Code.dir/Memtrace.cpp.s
+
+CMakeFiles/Code.dir/Memtrace.cpp.o.requires:
+
+.PHONY : CMakeFiles/Code.dir/Memtrace.cpp.o.requires
+
+CMakeFiles/Code.dir/Memtrace.cpp.o.provides: CMakeFiles/Code.dir/Memtrace.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Code.dir/build.make CMakeFiles/Code.dir/Memtrace.cpp.o.provides.build
+.PHONY : CMakeFiles/Code.dir/Memtrace.cpp.o.provides
+
+CMakeFiles/Code.dir/Memtrace.cpp.o.provides.build: CMakeFiles/Code.dir/Memtrace.cpp.o
+
+
 CMakeFiles/Code.dir/Family.cpp.o: CMakeFiles/Code.dir/flags.make
 CMakeFiles/Code.dir/Family.cpp.o: ../Family.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Code.dir/Family.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Code.dir/Family.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Code.dir/Family.cpp.o -c "/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Family.cpp"
 
 CMakeFiles/Code.dir/Family.cpp.i: cmake_force
@@ -155,7 +179,7 @@ CMakeFiles/Code.dir/Family.cpp.o.provides.build: CMakeFiles/Code.dir/Family.cpp.
 
 CMakeFiles/Code.dir/Container.cpp.o: CMakeFiles/Code.dir/flags.make
 CMakeFiles/Code.dir/Container.cpp.o: ../Container.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Code.dir/Container.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Code.dir/Container.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Code.dir/Container.cpp.o -c "/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Container.cpp"
 
 CMakeFiles/Code.dir/Container.cpp.i: cmake_force
@@ -179,7 +203,7 @@ CMakeFiles/Code.dir/Container.cpp.o.provides.build: CMakeFiles/Code.dir/Containe
 
 CMakeFiles/Code.dir/Menu.cpp.o: CMakeFiles/Code.dir/flags.make
 CMakeFiles/Code.dir/Menu.cpp.o: ../Menu.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Code.dir/Menu.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Code.dir/Menu.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Code.dir/Menu.cpp.o -c "/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Menu.cpp"
 
 CMakeFiles/Code.dir/Menu.cpp.i: cmake_force
@@ -206,6 +230,7 @@ Code_OBJECTS = \
 "CMakeFiles/Code.dir/main.cpp.o" \
 "CMakeFiles/Code.dir/Movie.cpp.o" \
 "CMakeFiles/Code.dir/Documentary.cpp.o" \
+"CMakeFiles/Code.dir/Memtrace.cpp.o" \
 "CMakeFiles/Code.dir/Family.cpp.o" \
 "CMakeFiles/Code.dir/Container.cpp.o" \
 "CMakeFiles/Code.dir/Menu.cpp.o"
@@ -216,12 +241,13 @@ Code_EXTERNAL_OBJECTS =
 Code: CMakeFiles/Code.dir/main.cpp.o
 Code: CMakeFiles/Code.dir/Movie.cpp.o
 Code: CMakeFiles/Code.dir/Documentary.cpp.o
+Code: CMakeFiles/Code.dir/Memtrace.cpp.o
 Code: CMakeFiles/Code.dir/Family.cpp.o
 Code: CMakeFiles/Code.dir/Container.cpp.o
 Code: CMakeFiles/Code.dir/Menu.cpp.o
 Code: CMakeFiles/Code.dir/build.make
 Code: CMakeFiles/Code.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Code"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable Code"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Code.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -232,6 +258,7 @@ CMakeFiles/Code.dir/build: Code
 CMakeFiles/Code.dir/requires: CMakeFiles/Code.dir/main.cpp.o.requires
 CMakeFiles/Code.dir/requires: CMakeFiles/Code.dir/Movie.cpp.o.requires
 CMakeFiles/Code.dir/requires: CMakeFiles/Code.dir/Documentary.cpp.o.requires
+CMakeFiles/Code.dir/requires: CMakeFiles/Code.dir/Memtrace.cpp.o.requires
 CMakeFiles/Code.dir/requires: CMakeFiles/Code.dir/Family.cpp.o.requires
 CMakeFiles/Code.dir/requires: CMakeFiles/Code.dir/Container.cpp.o.requires
 CMakeFiles/Code.dir/requires: CMakeFiles/Code.dir/Menu.cpp.o.requires
