@@ -32,6 +32,8 @@ public:
     void addToFile();
     void printAll();
 
+    void tests();
+
 };
 
 

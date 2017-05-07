@@ -62,10 +62,6 @@ dos.h
 assert.h
 -
 
-/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Memtrace.h
-stdarg.h
--
-
 /media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Menu.cpp
 Menu.h
 /media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Menu.h
@@ -99,6 +95,4 @@ Container.h
 /media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Container.h
 Menu.h
 /media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Menu.h
-Memtrace.h
-/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Memtrace.h
 

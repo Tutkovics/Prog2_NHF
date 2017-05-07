@@ -8,6 +8,7 @@ int Menu::menuDisplay() {
     std::cout << "4 - Uj film letrehozasa" << std::endl;
     std::cout << "5 - Torles" << std::endl;
     std::cout << "6 - Kilépés" << std::endl;
+    std::cout << "7 - Tesztesetek" << std::endl;
     std::cout << "***************************" << std::endl;
 
     int c;
@@ -48,6 +49,10 @@ void Menu::menuShow( Container& con) {
             case 6:
                 con.clean();
                 exit(0);
+                break;
+            case 7:
+                con.tests();
+                break;
             default:
                 throw "Hibas user input";
         }
