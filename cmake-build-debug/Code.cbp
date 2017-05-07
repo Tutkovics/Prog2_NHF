@@ -102,6 +102,12 @@
 		<Unit filename="/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Family.h">
 			<Option target="Code"/>
 		</Unit>
+		<Unit filename="/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Menu.cpp">
+			<Option target="Code"/>
+		</Unit>
+		<Unit filename="/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Menu.h">
+			<Option target="Code"/>
+		</Unit>
 		<Unit filename="/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Movie.cpp">
 			<Option target="Code"/>
 		</Unit>

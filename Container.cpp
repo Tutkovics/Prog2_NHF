@@ -82,6 +82,7 @@ void Container::push_back(Movie * moviePointer) {
     }*/
     array[pcs] = moviePointer;
     pcs++;
+
 }
 
 void Container::printAll() {
@@ -96,7 +97,7 @@ void Container::loadToMemory() {
     dataFile.open ("data.txt");
     if( !dataFile.is_open() ){ // unsuccessful file opening
         // exception handling
-        std::cerr << "SIKERTELEN FÁJLNYITÁS! (data.txt)" << std::endl;
+        std::cerr << "SIKERTELEN FÁJLNYITÁS! (loadToMemory)" << std::endl;
 
     } else { // successfully opened
         std::string line;
@@ -107,12 +108,12 @@ void Container::loadToMemory() {
             std::string delimiter = ";";
 
             size_t pos = 0;
-            std::string token;
+            std::string token = "";
 
             movieType ty = def;
-            int i = 0, re, playing, id;
-            double ra;
-            std::string tit, dir;
+            int i = 0, re = 0, playing = 0, id = 0;
+            double ra = 0.0;
+            std::string tit = "", dir = "";
 
             while ((pos = line.find(delimiter)) != std::string::npos) {
                 token = line.substr(0, pos);
@@ -123,6 +124,7 @@ void Container::loadToMemory() {
                     int k = std::stoi(token);
                     if( k == 2 ) ty = family;
                     else if ( k == 3) ty = documentary;
+                    else if ( k== 1) ty = def;
                 } else if( i == 2 ){ //title
                     tit = token;
                 } else if( i == 3 ){ //director
@@ -138,19 +140,123 @@ void Container::loadToMemory() {
                 }
                 line.erase(0, pos + delimiter.length());
                 i++;
+
             }
             // line still cuold contain description or ageLimit
-            if( ty == family ){
-                int ageLim = std::stoi(line);
-                this->push_back( new Family(tit, dir, playing, re, ra, ty, id, ageLim) );
-            } else if( ty == documentary ){
-                std::string des = line;
-                this->push_back( new Documentary(tit, dir, playing, re, ra, ty, id, des) );
-            } else{ //general movie
-                this->push_back( new Movie(tit, dir, playing, re, ra, ty, id) );
+            if( id != 0) {
+                if (ty == family) {
+                    int ageLim = std::stoi(line);
+                    this->push_back(new Family(tit, dir, playing, re, ra, ty, id, ageLim));
+                } else if (ty == documentary) {
+                    std::string des = line;
+                    this->push_back(new Documentary(tit, dir, playing, re, ra, ty, id, des));
+                } else if (ty == def) { //general movie
+                    this->push_back(new Movie(tit, dir, playing, re, ra, ty, id));
+                }
             }
+        }
 
+        dataFile.close();
+    }
+}
 
+void Container::deleteMovie(int id) {
+    std::fstream dataFile;
+    dataFile.open ("data.txt", std::ofstream::out | std::ofstream::trunc);
+    if( !dataFile.is_open() ){ // unsuccessful file opening
+        // exception handling
+        std::cerr << "SIKERTELEN FÁJLNYITÁS! (deleteMovie)" << std::endl;
+
+    } else {
+        for (int i = 0; i < pcs; i++) {
+            if (array[i]->getId() == id) {
+                // deleted movie
+            } else {
+                if( i != 0) {
+                    dataFile << '\n';
+                    array[i]->printToFile(dataFile);
+                } else {
+                    array[i]->printToFile( dataFile );
+                }
+            }
+        }
+
+        dataFile.close();
+
+    }
+}
+
+void Container::editMovie(int id) {
+    std::fstream dataFile;
+    dataFile.open ("data.txt", std::ofstream::out | std::ofstream::trunc);
+    if( !dataFile.is_open() ){ // unsuccessful file opening
+        // exception handling
+        std::cerr << "SIKERTELEN FÁJLNYITÁS! (editeMovie)" << std::endl;
+
+    } else {
+        for (int i = 0; i < pcs; i++) {
+            if (array[i]->getId() == id) {
+                std::cout << "Melyik argumentumot akarod megvaltoztatni?" << std::endl;
+                int choice;
+                std::cout << "1 - Cim" << std::endl;
+                std::cout << "2 - Rendezo" << std::endl;
+                std::cout << "3 - Megjelenes" << std::endl;
+                std::cout << "4 - Ertekeles" << std::endl;
+                std::cout << "5 - Lejatszas ideje" << std::endl;
+                std::cin >> choice;
+                std::cin.ignore(3,'\n');
+                std::string line;
+                switch( choice ){
+                    case 1:
+                        std::cout << "Az uj cim: \t";
+                        getline(std::cin, line);
+                        array[i]->setTitle( line );
+                        break;
+                    case 2:
+                        std::cout << "Az uj rendezo: \t";
+                        getline(std::cin, line);
+                        array[i]->setDirector( line );
+                        break;
+                    case 3:
+                        std::cout << "Az uj megjenes: \t";
+                        getline(std::cin, line);
+                        array[i]->setRelease( std::stoi(line) );
+                        break;
+                    case 4:
+                        std::cout << "Az uj ertekeles: \t";
+                        getline(std::cin, line);
+                        array[i]->setRating( std::stod(line) );
+                        break;
+                    case 5:
+                        std::cout << "Az uj lejatszasi idő: \t";
+                        getline(std::cin, line);
+                        array[i]->setPlayingTime( std::stoi(line) );
+                        break;
+                    default:
+                        std::cout << "Helytelen input" << std::endl;
+                        if( i != 0) {
+                            dataFile << '\n';
+                            array[i]->printToFile( dataFile );
+                        } else {
+                            array[i]->printToFile( dataFile );
+                        }
+                        break;
+                }
+
+                if( i != 0) {
+                    dataFile << '\n';
+                    array[i]->printToFile( dataFile );
+                } else {
+                    array[i]->printToFile( dataFile );
+                }
+            } else {
+                if( i != 0) {
+                    dataFile << '\n';
+                    array[i]->printToFile( dataFile );
+                } else {
+                    array[i]->printToFile( dataFile );
+                }
+            }
         }
         dataFile.close();
     }

@@ -22,8 +22,8 @@ public:
     void loadToMemory();
     static Movie* getNewMovie();
     void push_back(Movie*);
-    void deleteMovie();
-    void editMovie();
+    void deleteMovie(int id);
+    void editMovie(int id);
     void search();
 
     void printAll();

@@ -32,6 +32,10 @@ public:
     double getRating(){ return rating; }
     string getDirector(){ return director; }
     movieType getType(){ return type; }
+    int getId() { return id;}
+
+    /*virtual int getAgeLimit();
+    virtual std::string getDescription();*/
 
     //set functions
     void setTitle( string t ){ title = t; }
@@ -42,6 +46,7 @@ public:
     void setType( movieType ty ){ type = ty; }
 
     virtual void printDatas();
+    virtual void printToFile( std::fstream& os );
     static void sep();
 
     ~Movie(){}

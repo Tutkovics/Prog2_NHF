@@ -2,6 +2,7 @@
 #define CODE_FAMILY_H
 
 #include <iostream>
+#include <fstream>
 #include <string>
 #include "Movie.h"
 
@@ -20,6 +21,7 @@ public:
     void setAgeLimit( int a ){ ageLimit = a; }
 
     void printDatas();
+    void printToFile(std::fstream& os);
 };
 
 

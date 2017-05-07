@@ -1,4 +1,5 @@
 #include "Movie.h"
+#include <fstream>
 
 
 void Movie::printDatas() {
@@ -13,6 +14,10 @@ void Movie::printDatas() {
 
 void Movie::sep() {
     std::cout << "\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - \n" << std::endl;
+}
+
+void Movie::printToFile(std::fstream& os) {
+    os << id << ";" << type << ";" << title << ";" << director << ";" << release << ";" << playingTime << ";" << rating << ";" ;
 }
 
 

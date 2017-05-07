@@ -2,6 +2,7 @@
 #define CODE_DOCUMENTARY_H
 
 #include <iostream>
+#include <fstream>
 #include <string>
 #include "Movie.h"
 
@@ -20,6 +21,7 @@ public:
     void setDescription( string des ){ description = des; }
 
     void printDatas();
+    void printToFile(std::fstream& os);
 
 };
 

@@ -29,6 +29,8 @@ Documentary.h
 /media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Documentary.h
 iostream
 -
+fstream
+-
 string
 -
 Movie.h
@@ -41,14 +43,28 @@ Family.h
 /media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Family.h
 iostream
 -
+fstream
+-
 string
 -
 Movie.h
 /media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Movie.h
 
+/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Menu.cpp
+Menu.h
+/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Menu.h
+
+/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Menu.h
+iostream
+-
+Container.h
+/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Container.h
+
 /media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Movie.cpp
 Movie.h
 /media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Movie.h
+fstream
+-
 
 /media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Movie.h
 iostream
@@ -67,4 +83,6 @@ Family.h
 /media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Family.h
 Container.h
 /media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Container.h
+Menu.h
+/media/tutkovics/Data/Egyetem/Tanulmányok/2. félév/Prog/NHF/Code/Menu.h
 
